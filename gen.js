@@ -1,8 +1,7 @@
 let opacity = 255
 
-// circles
-let circleNumSlider
-let circleGapSlider
+let triNumSlider
+let triGapSlider
 
 // lines 1
 let lines1NumSlider
@@ -20,16 +19,18 @@ let lines2DistSlider
 let lines2SpinSlider
 let lines2ColorPicker
 let lines2StrokeWeightSlider
+
 function setup() {
   createCanvas(400, 400);
-  strokeWeight(30)
+  strokeWeight(4)
   strokeCap(PROJECT)
-  // circles
-  createP('Circles')
+
+    //triangle
+  createP('Triangles')
   createElement('label', 'num')
-  circleNumSlider = createSlider(1,10, 1) // min, max, default, step
+  triNumSlider = createSlider(1,10, 1) // min, max, default, step
   createElement('label', 'gap')
-  circleGapSlider = createSlider(50,150, 10)
+  triGapSlider = createSlider(50,150, 10)
 
   // lines 1
   createP('Lines 1')
@@ -59,25 +60,27 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background("white");
   translate(width/2, height/2)
   if (showLines1Checkbox.checked()) {
     drawLines()
   }
-  
   drawLines2()
-  drawCircles()
+  drawTriangles()
 }
 
-function drawCircles() {
-  let num = circleNumSlider.value()
-  let gap = circleGapSlider.value()
+function drawTriangles() {
+  let num = triNumSlider.value()
+  let gap = triGapSlider.value()
   for(let i=0; i < num; i++) {
     push()
-    noFill()
-    strokeWeight(10)
-    stroke(255,0,255,opacity)
-    circle(0,0, (i+1) * gap)
+    fill("pink")
+    strokeJoin(ROUND); 
+    stroke("pink")
+    rotate(i/num * TWO_PI)
+    translate(100,0)
+    triangle(0,0,50,50, 50, -50)
+    translate(gap ,0)
     pop()
   }
 }
