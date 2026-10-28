@@ -1,61 +1,37 @@
 let myData
-let colors = {}
+let colors = ["pink", "blue"]
 
 async function setup() {
-  createCanvas(1000, 400);
+  createCanvas(800, 500);
   myData = await loadJSON('data.json');
   console.log(myData)
 }
 
 function draw() {
   background(220);
+  
   for (let i = 0; i < myData.length; i++) {
     let type = myData[i]
-    let x = (i+1) * 100
+    let x = (i+1) * 50
     let y
     let num = map(type.size, 0, 100, 3, 7)
-    let c = colors[type.petal]
+    let petalLen = 0
     
 
     if (type.size === "s") {
-      y = height - height * 0.5 // shorter
+      petalLen = height * 0.1 // shorter
     } 
 
     else if (type.size === 'n') {
-      y = height - height * 0.8 // longer
+      petalLen = height * 0.2 // longer
     }
 
-    if (type.filament === 'i') {
-      drawFlower(x, y, num, c, type.filament)
-    }
-    else {
-      drawFilament(x, y, num, c, type.filament)
-    }
-  }
-
-  let types = Object.keys(colors)
-  
-  for (let i = 0; i < types.length; i++) {
-    push()
-    textAlign(LEFT, CENTER)
-    rectMode(CENTER)
-    fill(colors[types[i]])
-    square(20, (i+1) * 20, 16)
-    fill(40)
-    text(types[i], 40, (i+1) * 20)
-    pop()
+  drawFlower(x, y, petalLen, petal, type.filament)
   }
 }
 
-function drawFlower(x, y, num, c, filament) {
-  // stem
-  push()
-  translate(x,y)
-  strokeWeight(2)
-  stroke('#4F7A3A')
-  line(0,0,0,height-y)
-  pop()
-  
+function drawFlower(x, y, petalLen, spread, filament) {
+
   // petals
   push()
   translate(x, y)
@@ -81,7 +57,6 @@ function drawFlower(x, y, num, c, filament) {
 }
 
 function drawStem(x, y, num, c, filament) {
-  let petalLen = height-y
   let waviness = 10   
   let waveFreq = 0.05 
   
@@ -99,7 +74,7 @@ function drawStem(x, y, num, c, filament) {
   endShape()
   pop()
   
-  // n or s
+  // spread
   let spread = 20
   push()
   translate(x, y)
@@ -115,8 +90,6 @@ function drawStem(x, y, num, c, filament) {
     rect(0, 0, spread, spread, 0, spread / 2, spread / 2, spread / 2)
     // circle(0,0,20)
     pop()
-
-
   }
 
   pop()
