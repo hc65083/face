@@ -29,7 +29,7 @@ function draw() {
       drawFlower(x, y, num, c, type.filament)
     }
     else {
-      drawLeaves(x, y, num, c, type.filament)
+      drawFilament(x, y, num, c, type.filament)
     }
   }
 
@@ -80,7 +80,7 @@ function drawFlower(x, y, num, c, filament) {
   pop()
 }
 
-function drawLeaves(x, y, num, c, filament) {
+function drawStem(x, y, num, c, filament) {
   let petalLen = height-y
   let waviness = 10   
   let waveFreq = 0.05 

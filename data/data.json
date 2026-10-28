@@ -1,49 +1,49 @@
 [
   {
     "mbti": "entp",
-    "filament": "i",
-    "size": "regular",
-    "petal": 100,
-    "spread": "boba"
+    "filament": "e",
+    "size": "n",
+    "petal": "t",
+    "spread": "p"
   },
 
   {
     "mbti": "entj",
-    "filament": "i",
-    "size": "half",
-    "petal": 75,
-    "spread": "pudding"
+    "filament": "e",
+    "size": "n",
+    "petal": "t",
+    "spread": "j"
   },
 
   {
     "mbti": "enfp",
     "filament": "e",
-    "size": "none",
-    "petal": 50,
-    "spread": "grass jelly"
+    "size": "n",
+    "petal": "f",
+    "spread": "p"
   },
 
   {
     "mbti": "estj",
     "filament": "e",
-    "size": "n",
-    "petal": 25,
-    "spread": ""
+    "size": "s",
+    "petal": "t",
+    "spread": "j"
   },
 
   {
     "mbti": "enfj",
-    "filament": "green",
-    "size": "hot",
-    "petal": 0,
-    "spread": "boba"
+    "filament": "e",
+    "size": "n",
+    "petal": "f",
+    "spread": "j"
   },
 
   {
     "mbti": "esfj",
-    "filament": "oolong",
-    "size": "regular",
-    "petal": 25,
+    "filament": "e",
+    "size": "s",
+    "petal": "f",
     "spread": "j"
   }
 ]
