@@ -40,6 +40,14 @@
   },
 
   {
+    "mbti": "istj",
+    "filament": "i",
+    "size": "s",
+    "petal": "t",
+    "spread": "j"
+  },
+
+  {
     "mbti": "esfj",
     "filament": "e",
     "size": "s",

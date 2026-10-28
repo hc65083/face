@@ -1,5 +1,4 @@
 let myData
-let colors = ["pink", "blue"]
 
 async function setup() {
   createCanvas(800, 500);
@@ -13,7 +12,8 @@ function draw() {
   for (let i = 0; i < myData.length; i++) {
     let type = myData[i]
     let x = (i+1) * 50
-    let y
+    let y = height / 2
+    let num = 8
     let c
     let petalLen = 0
     
@@ -26,18 +26,18 @@ function draw() {
     }
 
     if (type.petal === "t") {
-      c = "blue"
+      c = "skyblue"
     } 
 
     else if (type.petal === 'f') {
       c = "pink"
     }
 
-  drawFlower(x, y, petalLen, c, type.filament)
+  drawFlower(x, y, petalLen, c, type.filament, type.spread, num)
   }
 }
 
-function drawFlower(x, y, petalLen, c, filament) {
+function drawFlower(x, y, petalLen, c, filament, spreadType, num) {
 
   // petals
   push()
@@ -45,15 +45,32 @@ function drawFlower(x, y, petalLen, c, filament) {
   let slice = TWO_PI / num
   let gap = slice * 0.3 // small gap between petals
   
-  for (let i = 0; i < num; i++) {
-    let petal = slice - gap
-    push()
-    rotate(i * slice)
-    translate(5, 0) // dist from center
-    fill(c)
-    arc(0,0, 64, 64, -petal/2, petal/2)
-    pop()
+  if (c === "skyblue") {
+    
+    for (let i = 0; i < num; i++) {
+      let petal = slice - gap
+      push()
+      rotate(i * slice)
+      translate(5, 0) // dist from center
+      fill(c)
+      triangle(0,0, 64, 64, -petal/2, petal/2)
+      pop()
+    }
   }
+
+   else if (c === "pink") {
+    for (let i = 0; i < num; i++) {
+      let petal = slice - gap
+      
+      push()
+      rotate(i * slice)
+      translate(5, 0)
+      fill(c)
+      triangle(0,0, 64, 64, -petal/2, petal/2)
+      pop()
+    }
+  }  
+
   pop()
   
   // spread
