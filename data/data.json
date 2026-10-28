@@ -1,0 +1,49 @@
+[
+  {
+    "mbti": "entp",
+    "filament": "i",
+    "size": "regular",
+    "petal": 100,
+    "spread": "boba"
+  },
+
+  {
+    "mbti": "entj",
+    "filament": "i",
+    "size": "half",
+    "petal": 75,
+    "spread": "pudding"
+  },
+
+  {
+    "mbti": "enfp",
+    "filament": "e",
+    "size": "none",
+    "petal": 50,
+    "spread": "grass jelly"
+  },
+
+  {
+    "mbti": "estj",
+    "filament": "e",
+    "size": "n",
+    "petal": 25,
+    "spread": ""
+  },
+
+  {
+    "mbti": "enfj",
+    "filament": "green",
+    "size": "hot",
+    "petal": 0,
+    "spread": "boba"
+  },
+
+  {
+    "mbti": "esfj",
+    "filament": "oolong",
+    "size": "regular",
+    "petal": 25,
+    "spread": "j"
+  }
+]
