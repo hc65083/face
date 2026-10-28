@@ -14,6 +14,7 @@ function draw() {
     let type = myData[i]
     let x = (i+1) * 50
     let y
+    let c
     let petalLen = 0
     
     if (type.size === "s") {
@@ -24,11 +25,19 @@ function draw() {
       petalLen = height * 0.2 // longer
     }
 
-  drawFlower(x, y, petalLen, petal, type.filament)
+    if (type.petal === "t") {
+      c = "blue"
+    } 
+
+    else if (type.petal === 'f') {
+      c = "pink"
+    }
+
+  drawFlower(x, y, petalLen, c, type.filament)
   }
 }
 
-function drawFlower(x, y, petalLen, spread, filament) {
+function drawFlower(x, y, petalLen, c, filament) {
 
   // petals
   push()
@@ -77,11 +86,6 @@ function drawFlower(x, y, petalLen, spread, filament) {
   drawFilament(filament)
   pop()
 
-  // center filament
-  push()
-  translate(x,y)
-  drawfilament(filament)
-  pop()
 }
 
 function drawFilament(filament) {
