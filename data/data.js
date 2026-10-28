@@ -58,7 +58,7 @@ function drawFlower(x, y, petalLen, c, filament, spreadType, num) {
     }
   }
 
-   else if (c === "pink") {
+  else if (c === "pink") {
     for (let i = 0; i < num; i++) {
       let petal = slice - gap
       
