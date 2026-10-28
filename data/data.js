@@ -8,13 +8,12 @@ async function setup() {
 }
 
 function draw() {
-  background(220);
+  background("beige");
   
   for (let i = 0; i < myData.length; i++) {
     let type = myData[i]
     let x = (i+1) * 50
     let y
-    let num = map(type.size, 0, 100, 3, 7)
     let petalLen = 0
     
 
@@ -107,9 +106,9 @@ function drawFilament(filament) {
     circle(0,0,20)
   } 
 
-  else {
+  else if (filament === 'i') {
     fill("LightYellow")
-    circle(0,0,30)
+    ellipse(0,0,30)
   }
 
 }
