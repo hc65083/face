@@ -53,30 +53,15 @@ function drawFlower(x, y, petalLen, spread, filament) {
   translate(x,y)
   drawfilament(filament)
   pop()
-}
-
-function drawStem(x, y, num, c, filament) {
-  let waviness = 10   
-  let waveFreq = 0.05 
-  
-  // stem
-  push()
-  translate(x, y)
-  noFill()          // without this, the wavy line gets filled in like a shape
-  stroke('#4F7A3A')
-  strokeWeight(4)
-  beginShape()
-  for (let i = 0; i <= petalLen; i += 5) {
-    let wave = sin(i * waveFreq) * waviness
-    vertex(wave, i)
-  }
-  endShape()
-  pop()
   
   // spread
   let spread = 20
+  let waviness = 10   
+  let waveFreq = 0.05 
+
   push()
   translate(x, y)
+
   for (let i = 0; i < num; i++) {
     let d = petalLen * (i + 1) / (num + 1)   // how far down the stem
     let wave = sin(d * waveFreq) * waviness  // where the stem is at that height
