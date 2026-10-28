@@ -16,7 +16,6 @@ function draw() {
     let y
     let petalLen = 0
     
-
     if (type.size === "s") {
       petalLen = height * 0.1 // shorter
     } 
