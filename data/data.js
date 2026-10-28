@@ -47,12 +47,6 @@ function drawFlower(x, y, petalLen, spread, filament) {
     pop()
   }
   pop()
-
-  // center filament
-  push()
-  translate(x,y)
-  drawfilament(filament)
-  pop()
   
   // spread
   let spread = 20
@@ -82,6 +76,12 @@ function drawFlower(x, y, petalLen, spread, filament) {
   push()
   translate(x,y)
   drawFilament(filament)
+  pop()
+
+  // center filament
+  push()
+  translate(x,y)
+  drawfilament(filament)
   pop()
 }
 
