@@ -74,7 +74,6 @@ function drawFlower(x, y, petalLen, c, filament) {
     rotate(radians(-60))
     fill(c)
     rect(0, 0, spread, spread, 0, spread / 2, spread / 2, spread / 2)
-    // circle(0,0,20)
     pop()
   }
 
